@@ -1,0 +1,262 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--META TAGS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--META TAGS END-->
+
+  <!--CSS FILES-->
+    <link rel="stylesheet" href="{% static './Bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.9.0-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static './aos/dist/aos.css' %}">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+  <!--CSS FILES-->
+
+    <title>Kamoliddinov Asliddin websita</title>
+</head>
+<body>
+
+<!--LOADER-->  
+<div class="loading">
+  <div class="main">
+    <div class="dot">
+      <div class="dot2"></div>
+    </div>
+  </div>
+</div>
+<!--LOADER END-->
+
+<!--NAVBAR-->
+<nav id="nav" class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">home</a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button onclick="navBack()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Biography</a>
+            </li>
+          </ul>
+        </div>
+</nav>
+<!--NAVBAR END-->
+
+<!--HOME SECTION-->
+<section class="home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="titles">
+                    <h3>Welcome to my website</h3>
+                    <div class="button">
+                        <a href="#portfolio">keyingi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--HOME SECTION END-->
+<!-- 
+<section id="services" class="services">
+  <div class="container">
+    <h3 class="text-center">R</h3>
+    <p class="text-center"><i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, asperiores!</i></p>
+    <div class="row mt-5">
+
+      <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="card-body">
+            <h3>Lorem ipsum</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Velit, aspernatur.
+               Molestias mollitia itaque hic unde placeat, 
+               reprehenderit vitae aperiam amet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <div class="card-body">
+            <h3>Lorem ipsum</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Velit, aspernatur.
+               Molestias mollitia itaque hic unde placeat, 
+               reprehenderit vitae aperiam amet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000">
+        <div class="card">
+          <div class="card-header">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="card-body">
+            <h3>Lorem ipsum</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Velit, aspernatur.
+               Molestias mollitia itaque hic unde placeat, 
+               reprehenderit vitae aperiam amet.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+
+<!--PORTFOLIO SECTION-->
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <h3 class="text-center">Mening proyektlarim</h3>
+    <p class="text-center"><i>Bu yerda mening barcha qilgan ishlarim bor misollarga yechimlar va proyektlar</i></p>
+
+      <div class="row mt-4">
+        <div class="col-md-4" data-aos="flip-down" data-aos-duration="950">
+          <div class="card">
+            <div class="card-header">
+              <div class="overlay">
+                
+                <div class="text-center">
+                  <a href="https://github.com/asliddin3101/" >Proyektlarni ko'rish</a>
+                </div>
+                <p>Bu proyektlar o'rganish davomidagi proyektlarim</p>
+              </div>
+              <img src="{% static './images/portfolio/img.jpeg' %}" alt="Portfolio img">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+    
+<!--PORTFOLIO SECTION END-->
+
+<!--ABOUT SECTION-->
+<section id="about" class="about">
+  <div class="container">
+    <h3 class="text-center">mening biografiyam</h3>
+    <div class="row">
+
+      <div class="col-md-4" data-aos="fa-calendar-alt" data-aos-duration="950">
+        <img class="w-100" src="{% static 'images/about/asliddin.jpg' %}" alt="my picture">
+        <img class="w-100" src="{% static 'images/about/a.jpg' %}" alt="my picture">
+      </div>
+      <div class="col-md-4">
+        <div class="info">
+          <h4>Asliddin Kamoliddinov</h4>
+          <p>
+            Assalomu alaykum men Kamoliddinov Asliddin 2003-yili 30-yanvarda tavallud topganman.
+            Men 1-sinfga 6 yoshimda qabul qilindim va shu tariqa katta hayotga qadam boshlandi.
+            5-sinfda Farg'ona shahridagi 4-IDUMI ga qabul qilindim va u yerda 5 yil mobaynida ta'lim oldim.
+            Keyingi manzil Muhammad Al-Xorazmiy nomidagi asli "Sariq litsey" nomi bilan tanilgan Akademmik litseyga qabul qilindim. Men Litseyda oqish davomida ko'plab yaxshi insonlar bilan tanishdim yaxshi do'stlar ortdirdim. Men u yerda asosan Fizika va Matematika fanlaridan tayyorlandim. Tayyorlanish davomida menga Fizika fanidan Xotamov Humoyun ustoz ustozlik qildi. Va shu tariqa TATU FF ga o'qishga topshirdim va o'qishga qabul qilindim. Hozir men TATU ning "Dasturiy injiniring" yo'nalishida 2 kurs talabasiman. 1-kursning bahorigacha C++ dan ta'lim oldim va keyin Web dasturlashni o'rgana boshladim (Beckend developer) va hozirda ham o'rganyapman.
+            Men rus tilida suhbatlasha olaman va ingliz tilini ham oz-moz bilaman.
+          </p>
+          <ul class="main">
+            <li>
+              <span class="firstSpan">
+                <i class="fas fa-user"></i>
+                Name:
+              </span>
+              <span class="secondSpan">
+                Asliddin Kamoliddinov
+              </span>
+            </li>
+            <li>
+              <span class="firstSpan">
+                <i class="fas fa-calendar-alt"></i>
+                Birthday:
+              </span>
+              <span class="secondSpan">
+                30 January 2003
+              </span>
+            </li>
+            <li>
+              <span class="firstSpan">
+                <i class="fas fa-map-marker-alt"></i>
+                Address:
+              </span>
+              <span class="secondSpan">
+                Ferghana, Uzbekistan
+              </span>
+            </li>
+            <a href="https://t.me/AsliddinKamoliddinov" class="networks">
+              <i class="fab fa-telegram"></i>
+              Mening telegram kanalim
+            </a>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--ABOUT SECTION END-->
+
+<!--FOOTER-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="copyright">
+            <p>
+            Website made by ASLIDDIN KAMOLIDDINOV <script>document.write(new Date().getFullYear());</script>
+            </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="social-networks">
+          <a href="https://t.me/AsliddinKamoliddinov2003" class="networks">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="https://github.com/asliddin3101/" class="networks">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <p class="smallInfo">Bu yerda mening telegram va github accountlarim bor a'logaqa chiqishingiz mumkin!
+      </div>
+    </div>
+  </div>
+</footer>
+<!--FOOTER END-->
+
+
+<!--IMPORTATNT JS FILES-->
+<script src="{% static './Bootstrap/js/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static './Bootstrap/js/popper.min.js' %}"></script>
+<script src="{% static './Bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static './aos/dist/aos.js' %}"></script>
+<script>
+  AOS.init({
+    easing: 'ease-in-out-sine'
+  });
+</script>
+<script src="{% static './js/app.js' %}"></script>
+<!--IMPORTANT JS FILES END-->
+</body>
+</html>
