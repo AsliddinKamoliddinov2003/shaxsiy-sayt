@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Update student</title>
+    <style>
+        table, tr, td{
+            border: 1px solid black;
+            border-collapse: collapse; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'student-list' %}">Bosh sahifa</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'student-add' %}">Add product</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>  
+
+
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-10 offset-1">
+            <h3>Update student</h3>
+            <form action=""  method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-group mb-3 mt-3">
+                <input type="text" name="name" placeholder="name" value="{{student.name}}"/>
+            </div>
+            <div class="input-group mb-3 mt-3">
+                <input type="text" name="surname" placeholder="surname" value="{{student.surname}}"/>
+            </div>
+            <div class="input-group mb-3 mt-3">
+                <input type="text" name="age" placeholder="age" value="{{student.age}}"/>
+            </div>
+            <div class="input-group mb-3 mt-3">
+                <input type="text" name="phone" placeholder="phone" value="{{student.phone}}"/>
+            </div>
+            <div class="input-group mb-3 mt-3">
+                <input type="text" name="nation" placeholder="nation" value="{{student.nation}}"/>
+            </div>
+            <div class="input-group mb-3 ">
+            <select class="form-select" name="direction_id" required>
+                <option  value="">Kategoriyani tanlang</option>
+                {% for dic in directions %}
+                    {% if direction.title == title %}
+                        <option value="{{dic.id}}" selected>{{dic.title}}</option>
+                    {% else %}
+                        <option value="{{dic.id}}" >{{dic.title}}</option>
+                    {% endif %}
+                {% endfor %}
+
+            </select>
+            </div>
+            
+            <input type="submit" class="btn btn-outline-success" value="Save">
+            <input type="reset" class="btn btn-outline-info" value="Cancel">
+        </form>
+        </div>
+    </div>
+</div>
