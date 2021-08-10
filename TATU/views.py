@@ -1,7 +1,11 @@
+from django import forms
+from django.urls.base import is_valid_path
+from TATU.forms import StudentsForm
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
 from .models import *
+from .forms import *
 
 def list(request):
     students = Students.objects.all()
@@ -12,32 +16,16 @@ def list(request):
 
 
 def add_student(request):
+    form = StudentsForm()
     if request.method == "POST":
-        name = request.POST.get("name", None)
-        surname = request.POST.get("surname", None)
-        age = request.POST.get("age", None)
-        phone = request.POST.get("phone", None)
-        nation = request.POST.get("nation", None)
-        direction_id = request.POST.get("direction_id", None)
+        form = StudentsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse("student-list"))
 
-        direction = Direction.objects.get(id=direction_id)
-
-        s = Students()
-        s.name = name
-        s.surname = surname
-        s.age = age
-        s.phone = phone
-        s.nation = nation
-        s.direction = direction
-
-        s.save()
-
-        return redirect(reverse("student-list"))
-
-    directions = Direction.objects.all()
 
     context = {
-        "directions":directions
+        "form":form
     }
 
     return render(request, "TATU/create.html", context)
@@ -51,34 +39,16 @@ def update_student(request, pk):
     else:
         student = student.first()
 
-
+    form = StudentsForm(instance=student)
     if request.method == "POST":
-        name = request.POST.get("name", None)
-        surname = request.POST.get("surname", None)
-        age = request.POST.get("age", None)
-        phone = request.POST.get("phone", None)
-        nation = request.POST.get("nation", None)
-        direction_id = request.POST.get("direction_id", None)
+        student = StudentsForm(request.POST, instance=student)
+        if student.is_valid():
+            student.save()
+            return redirect(reverse("student-list"))
 
-        direction = Direction.objects.get(id = direction_id)
-
-        student.name = name
-        student.surname = surname
-        student.age = age
-        student.phone = phone
-        student.nation = nation
-        student.direction = direction
-
-        student.save()
-
-        return redirect(reverse("student-list"))
-
-    directions = Direction.objects.all()
-
+       
     context = {
-        "directions":directions,
-        "student":student,
-
+        "form":form
     }
     return render(request, "TATU/update.html", context)
 

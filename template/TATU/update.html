@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'student-add' %}">Add product</a>
+                        <a class="nav-link" href="{% url 'student-add' %}">Add student</a>
                     </li>
                 </ul>
             </div>
@@ -47,35 +47,7 @@
             <h3>Update student</h3>
             <form action=""  method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="name" placeholder="name" value="{{student.name}}"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="surname" placeholder="surname" value="{{student.surname}}"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="age" placeholder="age" value="{{student.age}}"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="phone" placeholder="phone" value="{{student.phone}}"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="nation" placeholder="nation" value="{{student.nation}}"/>
-            </div>
-            <div class="input-group mb-3 ">
-            <select class="form-select" name="direction_id" required>
-                <option  value="">Kategoriyani tanlang</option>
-                {% for dic in directions %}
-                    {% if direction.title == title %}
-                        <option value="{{dic.id}}" selected>{{dic.title}}</option>
-                    {% else %}
-                        <option value="{{dic.id}}" >{{dic.title}}</option>
-                    {% endif %}
-                {% endfor %}
-
-            </select>
-            </div>
-            
+            {{form.as_p}}
             <input type="submit" class="btn btn-outline-success" value="Save">
             <input type="reset" class="btn btn-outline-info" value="Cancel">
         </form>

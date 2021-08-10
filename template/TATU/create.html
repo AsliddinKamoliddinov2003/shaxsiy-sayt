@@ -39,33 +39,10 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col-10 offset-1">
-            <h3>Add product</h3>
+            <h3>Add Student</h3>
             <form action=""  method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="name" placeholder="name"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="surname" placeholder="surname"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="age" placeholder="age"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="phone" placeholder="phone"/>
-            </div>
-            <div class="input-group mb-3 mt-3">
-                <input type="text" name="nation" placeholder="nation"/>
-            </div>
-            <div class="input-group mb-3 ">
-            <select class="form-select" name="direction_id" >
-                    <option  disabled>Yo'nalishni tanlang</option>
-                {% for dir in directions %}
-                    <option value="{{dir.id}}">{{dir.title}}</option>
-                {% endfor %}
-            </select>
-            </div>
-            
+            {{form.as_p}}
             <input type="submit" class="btn btn-outline-success" value="Save">
             <input type="reset" class="btn btn-outline-info" value="Cancel">
         </form>
