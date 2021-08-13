@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import manager
 from django.db.models.fields import CharField
 
 
@@ -27,5 +28,29 @@ class Students(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Klub(models.Model):
+    name = models.CharField(max_length=255)
+    state = models.CharField(max_length=255)
+    established_at = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
+
+
+class Futbolchi(models.Model):
+    klub = models.OneToOneField(Klub, on_delete=models.CASCADE)
+    fullname = models.CharField(max_length=255)
+    age = models.PositiveIntegerField(default=0)
+    salary = models.PositiveIntegerField(default=100)
+
+    def __str__(self):
+        return self.fullname
+
+
+
+
 
 
